@@ -145,8 +145,7 @@ function ContactUs() {
                 Come say hello at our office.
               </p>
               <p className="mt-2 text-blue-500 dark:text-blue-400">
-                1547 Hillview Drive San Francisco <br />
-                Califonia 94103 US
+                3321 NW 21st Ct Pompano Beach, FL 33066 US
               </p>
             </div>
           </div>

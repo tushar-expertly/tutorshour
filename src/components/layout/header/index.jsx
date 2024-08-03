@@ -73,7 +73,7 @@ function Header() {
                 to="/training"
                 className="hover:text-[#007bff] text-gray-600 font-bold text-[15px] lg:hover:fill-[#007bff] block"
               >
-                Seminars
+                Webinar
               </Link>
             </li>
             <li className="max-lg:border-b max-lg:py-3">
