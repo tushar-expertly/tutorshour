@@ -76,7 +76,7 @@ function Cart() {
     setLoading(true);
     try {
       const stripe = await loadStripe(
-        `pk_live_51PBO6KRq04FSuQPhBC5MEWxXDGMTnAaMtygmV7iVc1LQmKfteRLEK8ABqZH1M6tPY6vkRMxpEfOz9s1dXkpLLHw4001vzhBRh3`
+        `pk_test_51PBO6KRq04FSuQPh7coRkyBFJTLAbhyuTxQEJ0H7hApVX3LZFRt7OeC8Dnf3UKi7OdUw4wpffFcOYYRRcCgs6fEI00qUyBD1VO`
       );
 
       const body = {
@@ -168,22 +168,24 @@ function Cart() {
                     <CartItem key={index} cartItem={cartItem} />
                   ))}
                 </div>
-                <div className="promo-code-section">
-                  {promoMessage && <p>{promoMessage}</p>}
-                  <input
-                    type="text"
-                    placeholder="Enter promo code"
-                    value={promoCode}
-                    onChange={(e) => setPromoCode(e.target.value)}
-                  />
-                  <button onClick={applyPromoCode} disabled={promoLoading}>
-                    {promoLoading ? (
-                      <ClipLoader size={24} color={"#ffffff"} />
-                    ) : (
-                      "Apply Promo Code"
-                    )}
-                  </button>
-                </div>
+                {token ? (
+                  <div className="promo-code-section">
+                    {promoMessage && <p>{promoMessage}</p>}
+                    <input
+                      type="text"
+                      placeholder="Enter promo code"
+                      value={promoCode}
+                      onChange={(e) => setPromoCode(e.target.value)}
+                    />
+                    <button onClick={applyPromoCode} disabled={promoLoading}>
+                      {promoLoading ? (
+                        <ClipLoader size={24} color={"#ffffff"} />
+                      ) : (
+                        "Apply Promo Code"
+                      )}
+                    </button>
+                  </div>
+                ) : null}
               </div>
               <div className="cart-grid-right">
                 <div className="cart-total">
