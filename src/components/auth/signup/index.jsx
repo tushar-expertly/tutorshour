@@ -77,10 +77,10 @@ function Signup() {
     setCaptchaError("");
     setIsLoading(true);
     await createAccount();
+    localStorage.clear();
   };
 
   const createAccount = async () => {
-    localStorage.clear();
     try {
       const response = await fetch(`https://api.goexpertly.com/users/signup`, {
         method: "POST",
